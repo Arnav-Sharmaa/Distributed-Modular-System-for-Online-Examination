@@ -1,28 +1,59 @@
 {% extends 'faculty/base/base.html' %}
-
-{% block title %}Home{% endblock title %}
-{% block navbar_title %}{{ prof.username }}{% endblock navbar_title %}
-{% block navitem_title %}Home{% endblock navitem_title %}
-
+ {% block title %}
+ Home
+ {% endblock title %}
+{% block navbar_title %}
+{{ prof.username }}
+{% endblock navbar_title %} 
+{% block navitem_title %}
+Home
+{% endblock navitem_title %} 
 {% block buttons %}
-    <a class="btn btn-secondary" href="{% url 'exam:logoutUser' %}">Logout</a>
-{% endblock buttons %}
+<a class="btn btn-secondary" href="{% url 'exam:logoutUser' %}">Logout</a>
+{% endblock buttons %} 
 
 {% block body %}
-    <div class="container-fluid">
-        <div align='center'>
-            <br>
-            <a href="{% url 'faculty:view_students' %}" class="btn btn-primary"
-                text-align='center'>Students</a><br><br><br>
-            <a href="{% url 'faculty:view_exams' %}" class="btn btn-primary"
-                text-align='center'>Exams</a><br><br><br>
-            <a href="{% url 'faculty:add_question' %}" class="btn btn-primary"
-                text-align='center'>Question</a><br><br><br>
-            <a href="{% url 'faculty:make_paper' %}" class="btn btn-primary" text-align='center'>Question
-                Paper</a><br><br><br>
-            <a href="{% url 'faculty:view_groups' %}" class="btn btn-primary" text-align='center'>Student
-                Groups</a><br><br><br>
-        </div>
-    </div>
+<div
+  class="container-fluid d-flex justify-content-center align-items-center vh-100 bg-light"
+>
+  <div class="card shadow-lg p-4" style="max-width: 400px; width: 100%">
+    <h2 class="text-center mb-4">Menu</h2>
+
+    <a
+      href="{% url 'faculty:view_students' %}"
+      class="btn btn-primary btn-lg btn-block mb-3"
+    >
+      <i class="fas fa-user-graduate mr-2"></i> Students
+    </a>
+
+    <a
+      href="{% url 'faculty:view_exams' %}"
+      class="btn btn-primary btn-lg btn-block mb-3"
+    >
+      <i class="fas fa-file-alt mr-2"></i> Exams
+    </a>
+
+    <a
+      href="{% url 'faculty:add_question' %}"
+      class="btn btn-primary btn-lg btn-block mb-3"
+    >
+      <i class="fas fa-question-circle mr-2"></i> Question
+    </a>
+
+    <a
+      href="{% url 'faculty:make_paper' %}"
+      class="btn btn-primary btn-lg btn-block mb-3"
+    >
+      <i class="fas fa-file-alt mr-2"></i> Question Paper
+    </a>
+
+    <a
+      href="{% url 'faculty:view_groups' %}"
+      class="btn btn-primary btn-lg btn-block mb-3"
+    >
+      <i class="fas fa-users mr-2"></i> Student Groups
+    </a>
+  </div>
+</div>
 
 {% endblock body %}

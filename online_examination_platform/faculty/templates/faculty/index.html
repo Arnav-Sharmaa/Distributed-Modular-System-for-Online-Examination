@@ -1,0 +1,28 @@
+{% extends 'faculty/base/base.html' %}
+
+{% block title %}Home{% endblock title %}
+{% block navbar_title %}{{ prof.username }}{% endblock navbar_title %}
+{% block navitem_title %}Home{% endblock navitem_title %}
+
+{% block buttons %}
+    <a class="btn btn-secondary" href="{% url 'exam:logoutUser' %}">Logout</a>
+{% endblock buttons %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div align='center'>
+            <br>
+            <a href="{% url 'faculty:view_students' %}" class="btn btn-primary"
+                text-align='center'>Students</a><br><br><br>
+            <a href="{% url 'faculty:view_exams' %}" class="btn btn-primary"
+                text-align='center'>Exams</a><br><br><br>
+            <a href="{% url 'faculty:add_question' %}" class="btn btn-primary"
+                text-align='center'>Question</a><br><br><br>
+            <a href="{% url 'faculty:make_paper' %}" class="btn btn-primary" text-align='center'>Question
+                Paper</a><br><br><br>
+            <a href="{% url 'faculty:view_groups' %}" class="btn btn-primary" text-align='center'>Student
+                Groups</a><br><br><br>
+        </div>
+    </div>
+
+{% endblock body %}
